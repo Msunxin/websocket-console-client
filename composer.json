@@ -1,0 +1,26 @@
+{
+  "name": "joy2fun/websocket-console-client",
+  "description": "A WebSocket console client.",
+  "homepage": "http://github.com/joy2fun/websocket-console-client",
+  "authors": [
+    {
+      "name": "Chiao F",
+      "email": "php@html.js.cn"
+    }
+  ],
+  "require": {
+    "hoa/websocket": "~3.0",
+    "corneltek/getoptionkit": "~2"
+  },
+  "autoload": {
+    "psr-4": {
+      "WsConsoleClient\\": "src/"
+    }
+  },
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://packagist.phpcomposer.com"
+    }
+  }
+}
