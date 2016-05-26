@@ -22,8 +22,8 @@ try {
 
 if ($option->help) {
     Cli::out(
-        "Usage: ./ws-client [options] -m \"some message\"" . PHP_EOL .
-        "   Or: ./ws-client [options] -f /path/to/access.log" . PHP_EOL . PHP_EOL .
+        "Usage: ./vendor/bin/websocket-console-client [options] -m \"some message\"" . PHP_EOL .
+        "   Or: ./vendor/bin/websocket-console-client [options] -f /path/to/access.log" . PHP_EOL . PHP_EOL .
         "Options:" . PHP_EOL .
         (new ConsoleOptionPrinter)->render($specs)
     );
