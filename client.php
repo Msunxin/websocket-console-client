@@ -1,6 +1,4 @@
 <?php
-ini_set('display_errors', 'on');
-require 'vendor/autoload.php';
 
 use WsConsoleClient\Cli;
 use GetOptionKit\OptionCollection;

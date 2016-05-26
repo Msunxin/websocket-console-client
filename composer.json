@@ -17,6 +17,9 @@
       "WsConsoleClient\\": "src/"
     }
   },
+  "bin": [
+    "websocket-console-client"
+  ],
   "repositories": {
     "packagist": {
       "type": "composer",

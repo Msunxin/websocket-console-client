@@ -1,0 +1,24 @@
+#!/usr/bin/env php
+<?php
+ini_set('display_errors', 'on');
+
+do {
+    if (file_exists($autoload = __DIR__ . '/../../autoload.php')) {
+        break;
+    }
+
+    if (file_exists($autoload = __DIR__ . '/../vendor/autoload.php')) {
+        break;
+    }
+
+    if (file_exists($autoload = __DIR__ . '/vendor/autoload.php')) {
+        break;
+    }
+
+    fwrite(STDERR, 'Unable to find composer autoload file.' . PHP_EOL);
+    exit(1);
+
+} while (0);
+
+require $autoload;
+require __DIR__ . '/client.php';
