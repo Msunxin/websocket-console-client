@@ -1,6 +1,8 @@
 # Websocket Console Client
 
-Websocket Console Client是用来和[Websocket Console Server](https://github.com/joy2fun/websocket-console-server)
+[![Latest Stable Version](https://img.shields.io/packagist/v/joy2fun/websocket-console-client.svg)](https://packagist.org/packages/joy2fun/websocket-console-client)
+
+Websocket Console Client是用来与[Websocket Console Server](https://github.com/joy2fun/websocket-console-server)
 通信的PHP客户端。
 
 ## 使用Composer安装
@@ -41,7 +43,7 @@ $client->send("Hello, Web Client!");
 ## 命令行工具
 
 PHP客户端附带一个命令行工具，默认安装路径为项目根目录下的 `vendor/bin/websocket-console-client`。
-可以通过运行一下命令查看它的用法：
+可以通过运行以下命令查看它的用法：
 
 ```sh
 ./vendor/bin/websocket-console-client --help
