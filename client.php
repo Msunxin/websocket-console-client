@@ -6,12 +6,11 @@ use GetOptionKit\OptionParser;
 use GetOptionKit\OptionPrinter\ConsoleOptionPrinter;
 
 $specs = new OptionCollection;
+$specs->add('a|address?', 'Server address.' )->isa('String')->defaultValue('ws://localhost:9028');
 $specs->add('c|channel?', 'Target channel.' )->isa('String');
 $specs->add('e|error?', 'Monitor PHP error log file.' );
 $specs->add('f|file?', 'Log file to monitor.' )->isa('File');
-$specs->add('h|host?', 'WebSocket server host.')->isa('String')->defaultValue('127.0.0.1');
 $specs->add('m|message?', 'Publish message.' )->isa('String');
-$specs->add('p|port:', 'WebSocket server port.')->isa('Number')->defaultValue(9028);
 $specs->add('help', 'Print this help.');
 
 try {
@@ -28,9 +27,8 @@ if ($option->help) {
         (new ConsoleOptionPrinter)->render($specs)
     );
 } else {
-    $uri = sprintf("ws://%s:%d", $option->host, $option->port);
-    Cli::out(sprintf("Connecting to %s ...", $uri));
-    $client = (new WsConsoleClient\Client($uri))->getInstance();
+    Cli::out(sprintf("Connecting to %s ...", $option->address));
+    $client = (new WsConsoleClient\Client($option->address))->getInstance();
     $client->connect();
     if ($option->error) {
         if (is_file(ini_get("error_log"))) {
