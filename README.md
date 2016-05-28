@@ -54,7 +54,7 @@ PHP客户端附带一个命令行工具，默认安装路径为项目根目录�
 例如以上的例子，可以通过一行命令完成：
 
 ```sh
-./vendor/bin/websocket-console-client -h 192.168.1.100 -m "Hello, Web Client!"
+./vendor/bin/websocket-console-client -a ws://192.168.1.100:9028 -m "Hello, Web Client!"
 ```
 
 ### 监控日志文件
@@ -62,13 +62,13 @@ PHP客户端附带一个命令行工具，默认安装路径为项目根目录�
 命令行的 `-f` 选项可以用来监控日志文件，类似命令行 `tail -f` 的效果，示例如下
 
 ```sh
-./vendor/bin/websocket-console-client -h 192.168.1.100 -f /wwwlog/access.log
+./vendor/bin/websocket-console-client -a ws://192.168.1.100:9028 -f /wwwlog/access.log
 ```
 
 如果你的PHP的 `error_log` 配置为一个文件，可以使用 `-e` 参数监控PHP日志
 
 ```sh
-./vendor/bin/websocket-console-client -h 192.168.1.100 -e
+./vendor/bin/websocket-console-client -a ws://192.168.1.100:9028 -e
 ```
 
 ## 演示
